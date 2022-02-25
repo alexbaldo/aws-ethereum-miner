@@ -487,7 +487,7 @@ Resources:
                 SERVERS=(eth-eu1 eth-eu2 eth-us-east1 eth-us-west1 eth-asia1)
                 while (true); do
                   PREFERRED_SERVER=\${!SERVERS[\${!RANDOM} % \${!#SERVERS[@]}]}
-                  ./ethminer -U \
+                  ./ethminer -G \
                     -P stratum1+tcp://${EthWallet}@\${!PREFERRED_SERVER}.nanopool.org:9999 \
                     -P stratum1+tcp://${EthWallet}@eth-eu1.nanopool.org:9999 \
                     -P stratum1+tcp://${EthWallet}@eth-eu2.nanopool.org:9999 \
